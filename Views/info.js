@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { SafeAreaView, Text, View, Button, TouchableOpacity } from 'react-native';
 
 const Info = () => {
@@ -47,3 +48,4 @@ const Info = () => {
 
   export default Info;
   
+
