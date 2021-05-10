@@ -5,110 +5,36 @@
  * @format
  * @flow strict-local
  */
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Start from './Views/Start';
+import InfoScreen from './Views/Info';
+import GameScreen1 from './Views/Game1';
 
 import React from 'react';
 import {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-  Button,
-  Alert
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+const Stack = createStackNavigator();
 
 const App = () =>{
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section >
-            Welcome to the classic game: <Text style={styles.highlight}>Choose the right chest</Text> 
-          </Section>
-          
-          
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <Button title="start" onPress={() => Alert.alert("hej")} color="#FFBE5E" style={styles.btn}/>
-          <Button title="How to play" onPress={() => Alert.alert("hej")} style={styles.btn}/>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Start"
+          component={Start}
+          options={{ title: 'Welcome' }}
+        />
+        <Stack.Screen name="Info" component={InfoScreen} />
+        <Stack.Screen name="Game1" component={GameScreen1}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-btn: {
-  backgroundColor: "#FFBE5E"
-}
 
-});
 
 export default App;
