@@ -30,9 +30,9 @@ const Start = ({navigation}) => {
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
+      {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
+        style={backgroundStyle}> */}
         <View style={styles.header}>
         <Image
         style={styles.logo}
@@ -51,10 +51,10 @@ const Start = ({navigation}) => {
           {/* <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section> */}
-          <Button title="start" onPress={() => Alert.alert("hej")} color="#FFBE5E" style={styles.btn}/>
+          <Button title="start" onPress={() => navigation.navigate('Game1')} color="#FFBE5E" style={styles.btn}/>
           <Button title="How to play" onPress={() => navigation.navigate('Info')} style={styles.btn}/>
         </View>
-      </ScrollView>
+     
     </SafeAreaView>
   );
 }
@@ -74,9 +74,7 @@ const Section = ({children, title}) => {
         <Text
           style={[
             styles.sectionDescription,
-            {
-              color: isDarkMode ? Colors.light : Colors.dark,
-            },
+            
           ]}>
           {children}
         </Text>
@@ -97,6 +95,7 @@ const Section = ({children, title}) => {
       marginTop: 8,
       fontSize: 18,
       fontWeight: '400',
+      color: 'white'
     },
     highlight: {
       fontWeight: '700',

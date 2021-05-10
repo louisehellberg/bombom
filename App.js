@@ -10,6 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Start from './Views/Start';
 import InfoScreen from './Views/Info';
+import GameScreen1 from './Views/Game1';
 
 import React from 'react';
 import {Node} from 'react';
@@ -28,6 +29,7 @@ const App = () =>{
           options={{ title: 'Welcome' }}
         />
         <Stack.Screen name="Info" component={InfoScreen} />
+        <Stack.Screen name="Game1" component={GameScreen1}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
