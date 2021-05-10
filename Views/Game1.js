@@ -8,17 +8,21 @@ import {
     useColorScheme,
     View,
     Button,
-    Alert
+    Alert,
+    TouchableOpacity
   } from 'react-native';
+import StartButton from '../Components/StartBtn';
 
+
+  
 const Game1 = ({navigation}) => {
     return (
-        <SafeAreaView style={{backgroundColor:'#2e2e2e'}}>
+        <SafeAreaView >
         <View style={styles.background}>
-          <Text>Info</Text>
+        <Text style={styles.infoTitle}>ARE YOU READY?</Text>
         </View>
         <View>
-            
+        <StartButton title="Start" size="sm"/>
         </View>
         </SafeAreaView>
       );
@@ -55,9 +59,14 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#2e2e2e'
   },
-  background: {
-      backgroundColor: '#2e2e2e'
-  }
+  infoTitle: {
+    textAlign: "center", 
+    marginBottom: 7, 
+    marginTop: 7,
+    color: 'white',
+    fontSize: 40
+}
+  
   
   });
 

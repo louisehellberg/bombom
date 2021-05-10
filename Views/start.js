@@ -28,7 +28,7 @@ const Start = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={{color: 'black'}}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       {/* <ScrollView
         contentInsetAdjustmentBehavior="automatic"
