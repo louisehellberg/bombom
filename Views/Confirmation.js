@@ -1,16 +1,10 @@
 import React from 'react';
-import { SafeAreaView, Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Confirmation = ({navigation}) => {
+const Confirmation = ({ navigation }) => {
 
-  const YesButton = ({ onPress, title }) => (
-    <TouchableOpacity onPress={onPress} style={styles.yesButtonContainer}>
-      <Text style={styles.appButtonText}>{title}</Text>
-    </TouchableOpacity>
-  );
-
-  const NoButton = ({ onPress, title }) => (
-    <TouchableOpacity onPress={onPress} style={styles.noButtonContainer}>
+  const ConfirmationButton = ({ onPress, title }) => (
+    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
       <Text style={styles.appButtonText}>{title}</Text>
     </TouchableOpacity>
   );
@@ -21,17 +15,16 @@ const Confirmation = ({navigation}) => {
             <Text style={{fontSize: 20, textAlign: "center", color: 'white', marginBottom: 10}}>Are you sure?</Text>
             
             <View style={styles.screenContainer}>
-                <View style={styles.buttonContainer}>
-                    <YesButton title="Yes" onPress={() => 
+                <View style={styles.buttonContainer, backgroundColor='#A8D8A0'}>
+                    <ConfirmationButton title="Yes" onPress={() => 
                       navigation.navigate('Result', {
                         resultParam: 'true',
-                      }
-                      )}
+                      })}
                     />
                 </View>
 
-                <View style={styles.buttonContainer}>
-                    <NoButton title="No" onPress={() => navigation.navigate('Game1')}/>
+                <View style={styles.buttonContainer, backgroundColor='#D87D7D'}>
+                    <ConfirmationButton title="No" onPress={() => navigation.navigate('Game1')}/>
                 </View>
             </View>
 
@@ -40,20 +33,12 @@ const Confirmation = ({navigation}) => {
   };
 
   const styles = StyleSheet.create({
-    yesButtonContainer: {
+    appButtonContainer: {
       elevation: 8,
-      backgroundColor: "#A8D8A0",
       borderRadius: 10,
       paddingVertical: 2,
       paddingHorizontal: 2
     },
-    noButtonContainer: {
-        elevation: 8,
-        backgroundColor: "#D87D7D",
-        borderRadius: 10,
-        paddingVertical: 2,
-        paddingHorizontal: 2
-      },
     appButtonText: {
       fontSize: 18,
       color: "#2E2E2E",
@@ -68,10 +53,6 @@ const Confirmation = ({navigation}) => {
         margin: 5,
         width: 100,
     }
-    
-
   });
 
   export default Confirmation;
-  
-
