@@ -16,6 +16,11 @@ import StartButton from '../Components/StartBtn';
 
   
 const Game1 = ({navigation}) => {
+  const StartButton = ({ title }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('Confirmation')} style={styles.appButtonContainer}>
+      <Text style={styles.appButtonText}>{title}</Text>
+    </TouchableOpacity>
+  );
     return (
         <SafeAreaView >
         <View style={styles.background}>
@@ -65,7 +70,24 @@ const styles = StyleSheet.create({
     marginTop: 7,
     color: 'white',
     fontSize: 40
-}
+},
+appButtonContainer: {
+  elevation: 8,
+  backgroundColor: "#FFBE5E",
+  borderRadius: 10,
+  paddingVertical: 2,
+  paddingHorizontal: 6,
+  margin: 5,
+  width: 100
+
+},
+appButtonText: {
+  fontSize: 18,
+  color: "#2E2E2E",
+  alignSelf: "center",
+  textTransform: "uppercase",
+  
+},
   
   
   });

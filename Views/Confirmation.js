@@ -1,7 +1,7 @@
 import React from 'react';
-import { SafeAreaView, Text, View, Button, TouchableOpacity } from 'react-native';
+import { SafeAreaView, Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
-const Confirmation = () => {
+const Confirmation = ({navigation}) => {
 
   const YesButton = ({ onPress, title }) => (
     <TouchableOpacity onPress={onPress} style={styles.yesButtonContainer}>
@@ -56,12 +56,12 @@ const Confirmation = () => {
       textTransform: "uppercase"
     },
     screenContainer: {
-        display: 'table',
-        margin: 'auto',
+        flexDirection: 'row',
+        justifyContent: 'center',
     }, 
     buttonContainer: {
-        float: 'left',
-        marginLeft: 5,
+        margin: 5,
+        width: 100,
     }
     
 
