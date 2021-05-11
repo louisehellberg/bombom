@@ -25,8 +25,8 @@ const Start = ({navigation}) => {
   const backgroundStyle = {
     backgroundColor: Colors.darker 
   };
-  const StartButton = ({ title }) => (
-    <TouchableOpacity onPress={() => navigation.navigate('Game1')} style={styles.appButtonContainer}>
+  const StartButton = ({ title, onPress}) => (
+    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
       <Text style={styles.appButtonText}>{title}</Text>
     </TouchableOpacity>
   );
@@ -52,8 +52,15 @@ const Start = ({navigation}) => {
           {/* <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section> */}
-          <StartButton title="Start" />
-          {/* <StartButton title="How to play" onPress={() => navigation.navigate('Info')} style={{width: 200}}/> */}
+          <StartButton title="Start" onPress={() => 
+                      navigation.navigate('Game1'
+                      )}
+          />
+          <StartButton title="How to play" onPress={() => 
+                      navigation.navigate('Game1'
+                      )}
+          />
+          
         </View>
      
     </SafeAreaView>

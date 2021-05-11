@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, Text, View, Button, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView, Text, View, Button, TouchableOpacity, Image, StyleSheet } from 'react-native';
 
 const Result = ({ navigation, route }) => {
 
@@ -42,7 +42,7 @@ const Result = ({ navigation, route }) => {
         </View>
             
             <View style={styles.buttonContainer}>
-                <PlayAgainButton title="Play again"/>
+                <PlayAgainButton title="Play again" onPress={() => navigation.navigate('Game1')}/>
             </View>
 
       </SafeAreaView>

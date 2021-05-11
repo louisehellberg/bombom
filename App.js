@@ -14,6 +14,7 @@ import GameScreen1 from './Views/Game1';
 import StartBtn from './Components/StartBtn';
 import ConfirmationScreen from './Views/Confirmation';
 import ResultScreen from './Views/Result';
+import GameScreen2 from '.Views/Game2';
 
 import React from 'react';
 import {Node} from 'react';
@@ -37,6 +38,7 @@ const App = () =>{
         />
         <Stack.Screen name="Info" component={InfoScreen}/> 
         <Stack.Screen name="Game1" component={GameScreen1}/>
+        <Stack.Screen name="Game2" component={GameScreen2}/>
         <Stack.Screen name="Confirmation" component={ConfirmationScreen}/>
         <Stack.Screen name="Result" component={ResultScreen}/>
       </Stack.Navigator>
