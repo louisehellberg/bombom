@@ -7,9 +7,8 @@ import {
     Text,
     useColorScheme,
     View,
-    Button,
-    Alert,
-    Image
+    Image,
+    TouchableOpacity
   } from 'react-native';
 
   import {
@@ -26,6 +25,11 @@ const Start = ({navigation}) => {
   const backgroundStyle = {
     backgroundColor: Colors.darker 
   };
+  const StartButton = ({ title }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('Game1')} style={styles.appButtonContainer}>
+      <Text style={styles.appButtonText}>{title}</Text>
+    </TouchableOpacity>
+  );
 
   return (
     <SafeAreaView style={{color: 'black'}}>
@@ -39,10 +43,7 @@ const Start = ({navigation}) => {
         source={require('../Static/bombomlogga_Rityta1.png')}
       />
       </View>
-        <View
-          style={{
-            backgroundColor: '#2e2e2e',
-          }}>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <Section >
             Welcome to the classic game: <Text /* style={styles.highlight} */>Choose the right chest</Text> 
           </Section>
@@ -51,8 +52,8 @@ const Start = ({navigation}) => {
           {/* <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section> */}
-          <Button title="start" onPress={() => navigation.navigate('Game1')} color="#FFBE5E" style={styles.btn}/>
-          <Button title="How to play" onPress={() => navigation.navigate('Info')} style={styles.btn}/>
+          <StartButton title="Start" />
+          {/* <StartButton title="How to play" onPress={() => navigation.navigate('Info')} style={{width: 200}}/> */}
         </View>
      
     </SafeAreaView>
@@ -113,7 +114,24 @@ const Section = ({children, title}) => {
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#2e2e2e'
-  }
+  },
+  appButtonContainer: {
+    elevation: 8,
+    backgroundColor: "#FFBE5E",
+    borderRadius: 10,
+    paddingVertical: 2,
+    paddingHorizontal: 6,
+    margin: 5,
+    width: 100
+  
+  },
+  appButtonText: {
+    fontSize: 18,
+    color: "#2E2E2E",
+    alignSelf: "center",
+    textTransform: "uppercase",
+    
+  },
   
   });
 

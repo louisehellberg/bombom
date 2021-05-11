@@ -1,15 +1,11 @@
 import React from 'react';
 import {
     SafeAreaView,
-    ScrollView,
-    StatusBar,
     StyleSheet,
     Text,
-    useColorScheme,
     View,
-    Button,
-    Alert,
-    TouchableOpacity
+    TouchableOpacity,
+    Image,
   } from 'react-native';
 import StartButton from '../Components/StartBtn';
 
@@ -23,42 +19,34 @@ const Game1 = ({navigation}) => {
   );
     return (
         <SafeAreaView >
+         
         <View style={styles.background}>
         <Text style={styles.infoTitle}>ARE YOU READY?</Text>
         </View>
-        <View>
+        <View style={styles.imageContainer}>
+            <Image
+                style={styles.image}
+                source={require('../Assets/closed.png')}
+            />
+            <Image
+                style={styles.image}
+                source={require('../Assets/closed.png')}
+            />
+            <Image
+                style={styles.image}
+                source={require('../Assets/closed.png')}
+            />
+        </View>
+        <View style={styles.buttonContainer}>
         <StartButton title="Start" size="sm"/>
         </View>
+      
         </SafeAreaView>
       );
 }
 
 const styles = StyleSheet.create({
-    sectionContainer: {
-      marginTop: 32,
-      paddingHorizontal: 24,
-    },
-    sectionTitle: {
-      fontSize: 24,
-      fontWeight: '600',
-    },
-    sectionDescription: {
-      marginTop: 8,
-      fontSize: 18,
-      fontWeight: '400',
-    },
-    highlight: {
-      fontWeight: '700',
-    },
-  btn: {
-    backgroundColor: "#FFBE5E"
-  },
-  logo: {
-    width: 250,
-    height: 250,
-    backgroundColor: 'white',
-   
-  },
+    
   header: {
       justifyContent: 'center',
       alignItems: 'center',
@@ -88,6 +76,19 @@ appButtonText: {
   textTransform: "uppercase",
   
 },
+buttonContainer:{
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+image: {
+  width: 100,
+  height: 80,
+  margin: 10
+},
+imageContainer:{
+  flexDirection: 'row',
+  justifyContent: 'center',
+}
   
   
   });
