@@ -14,8 +14,8 @@ import StartButton from '../Components/StartBtn';
 
   
 const Game1 = ({navigation}) => {
-  const StartButton = ({ title, onPress }) => (
-    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
+  const StartButton = ({ title }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('Confirmation')} style={styles.appButtonContainer}>
       <Text style={styles.appButtonText}>{title}</Text>
     </TouchableOpacity>);
 
@@ -38,21 +38,21 @@ const PATTERN = [
           <TouchableOpacity onPress={() => Vibration.vibrate(PATTERN)}>
             <Image
                 style={styles.image}
-                source={require('../Assets/open.png')}
+                source={require('../Assets/closed.png')}
             /></TouchableOpacity>
             <TouchableOpacity onPress={() => Vibration.vibrate(PATTERN)}>
             <Image
                 style={styles.image}
-                source={require('../Assets/open.png')}
+                source={require('../Assets/closed.png')}
             /></TouchableOpacity>
             <TouchableOpacity onPress={() => Vibration.vibrate(PATTERN)}>
             <Image
                 style={styles.image}
-                source={require('../Assets/open.png')}
+                source={require('../Assets/closed.png')}
             /></TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-        <StartButton title="Start" size="sm" onPress={() => navigation.navigate('Game2')}/>
+        <StartButton title="Start" size="sm"/>
         </View>
       
         </SafeAreaView>
