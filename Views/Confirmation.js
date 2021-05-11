@@ -22,11 +22,16 @@ const Confirmation = ({navigation}) => {
             
             <View style={styles.screenContainer}>
                 <View style={styles.buttonContainer}>
-                    <YesButton title="Yes"/>
+                    <YesButton title="Yes" onPress={() => 
+                      navigation.navigate('Result', {
+                        resultParam: 'true',
+                      }
+                      )}
+                    />
                 </View>
 
                 <View style={styles.buttonContainer}>
-                    <NoButton title="No"/>
+                    <NoButton title="No" onPress={() => navigation.navigate('Game1')}/>
                 </View>
             </View>
 

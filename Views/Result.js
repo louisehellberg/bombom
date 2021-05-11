@@ -3,26 +3,42 @@ import { SafeAreaView, Text, View, Button, TouchableOpacity, Image } from 'react
 
 const Result = ({ navigation, route }) => {
 
-  const PlayAgainButton = ({ onPress, title }) => (
-    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
-      <Text style={styles.appButtonText}>{title}</Text>
-    </TouchableOpacity>
-  );
+    const PlayAgainButton = ({ onPress, title }) => (
+        <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
+        <Text style={styles.appButtonText}>{title}</Text>
+        </TouchableOpacity>
+    );
 
-  const { answer } = route.params;
+    const { resultParam } = route.params;
 
-    const chest = answer
+    function display_chest() {
+        if (resultParam == 'true') {
+            return (
+                <Image
+                    style={styles.result_image}
+                    source={require('../Assets/open.png')}
+                />
+            );
+        } else {
+            return (
+                <Image
+                    style={styles.result_image}
+                    source={require('../Assets/closed.png')}
+                />
+            );
+        }
+    }
+
+
+/*     const chest = resultParam
     ? require('../Assets/open.png')
-    : require('../Assets/closed.png');
+    : require('../Assets/closed.png'); */
 
     return (
       <SafeAreaView>
 
         <View style={styles.container}>
-            <Image
-                style={styles.result_image}
-                source={chest}
-            />
+            {display_chest()}
         </View>
             
             <View style={styles.buttonContainer}>
