@@ -14,7 +14,7 @@ import GameScreen1 from './Views/Game1';
 import StartBtn from './Components/StartBtn';
 import ConfirmationScreen from './Views/Confirmation';
 import ResultScreen from './Views/Result';
-import GameScreen2 from '.Views/Game2';
+import GameScreen2 from './Views/Game2';
 
 import React from 'react';
 import {Node} from 'react';

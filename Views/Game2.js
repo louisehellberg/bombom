@@ -9,12 +9,13 @@ const PickChestButton = ({ onPress, title }) => (
   </TouchableOpacity>
 );
 
-const vibration_pattern_empty = [1000, 2000, 3000];
-const vibration_pattern_bomb1 = [3000, 1000, 2000];
-const vibration_pattern_bomb2 = [2000, 3000, 1000];
+const vibration_pattern_empty = [300, 300, 300];
+const vibration_pattern_bomb1 = [200, 1000, 200];
+const vibration_pattern_bomb2 = [2000, 300, 100];
 
 const outer_vibration_list = [vibration_pattern_empty, vibration_pattern_bomb1, vibration_pattern_bomb2];
 var currentIndex = outer_vibration_list.length, temporaryValue, randomIndex;
+console.log(currentIndex)
 
 while (0 !== currentIndex) {
   // Pick a remaining element...
@@ -31,9 +32,9 @@ const chest_vibration1 = outer_vibration_list[0];
 const chest_vibration2 = outer_vibration_list[1];
 const chest_vibration3 = outer_vibration_list[2];
 
-const chest_button1 = 'true';
-const chest_button2 = 'true';
-const chest_button3 = 'true';
+let chest_button1 = 'true'; 
+let chest_button2 = 'true';
+let chest_button3 = 'true';
 
 if (chest_vibration1 == vibration_pattern_empty) {
   chest_button1 = 'false';
