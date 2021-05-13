@@ -3,11 +3,18 @@ import { SafeAreaView, Text, View, StyleSheet, TouchableOpacity, Button } from '
 
 const Confirmation = ({ navigation, route }) => {
 
-  const ConfirmationButton = ({ onPress, title }) => (
-    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
+  const YesButton = ({ onPress, title }) => (
+    <TouchableOpacity onPress={onPress} style={styles.yesButtonContainer}>
       <Text style={styles.appButtonText}>{title}</Text>
     </TouchableOpacity>
   );
+
+  const NoButton = ({ onPress, title }) => (
+    <TouchableOpacity onPress={onPress} style={styles.noButtonContainer}>
+      <Text style={styles.appButtonText}>{title}</Text>
+    </TouchableOpacity>
+  );
+
   const { resultParam } = route.params;
 
     return (
@@ -16,30 +23,38 @@ const Confirmation = ({ navigation, route }) => {
             <Text style={{fontSize: 20, textAlign: "center", color: 'white', marginBottom: 10}}>Are you sure?</Text>
             
             <View style={styles.screenContainer}>
-                <View>
-                    <Button title="Yes" onPress={() => 
+                <View style={styles.buttonContainer}>
+                    <YesButton title="Yes"onPress={() => 
                       navigation.navigate('Result', {
                         resultParam: resultParam,
                       })}
                     />
                 </View>
 
-                <View>
-                    <Button title="No" onPress={() => navigation.navigate('Game1')}/>
+                <View style={styles.buttonContainer}>
+                    <NoButton title="No" onPress={() => navigation.navigate('Game1')}/>
                 </View>
             </View>
 
       </SafeAreaView>
     );
   };
-/* style={styles.buttonContainer, backgroundColor='#A8D8A0'}  style={styles.buttonContainer, backgroundColor='#D87D7D'}*/
+
   const styles = StyleSheet.create({
-    appButtonContainer: {
+    yesButtonContainer: {
       elevation: 8,
+      backgroundColor: "#A8D8A0",
       borderRadius: 10,
       paddingVertical: 2,
       paddingHorizontal: 2
     },
+    noButtonContainer: {
+        elevation: 8,
+        backgroundColor: "#D87D7D",
+        borderRadius: 10,
+        paddingVertical: 2,
+        paddingHorizontal: 2
+      },
     appButtonText: {
       fontSize: 18,
       color: "#2E2E2E",
