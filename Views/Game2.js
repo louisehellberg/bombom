@@ -52,6 +52,8 @@ return (
     
     <View>
       <Text style={styles.infoTitle}>MAKE YOUR PICK!</Text>
+      <Text style={styles.infoText}>Drag your finger across the different chests to feel the vibration patterns and identify the chest without a bomb!</Text>
+      <Text style={styles.infoText}>Then click on the button underneatch the chest that you think is the one without a bomb!</Text>
     </View>
 
     <View style={styles.imageContainer}>
@@ -100,8 +102,8 @@ return (
           })}
         />
       </View>
-    </View>
 
+    </View>
 
   </SafeAreaView>
   );
@@ -110,10 +112,17 @@ return (
 const styles = StyleSheet.create({
   infoTitle: {
     textAlign: "center", 
-    // marginBottom: 17, 
-    marginTop: 17,
+    marginBottom: 20, 
+    marginTop: 25,
     color: 'white',
     fontSize: 40
+  },
+  infoText: {
+    textAlign: "center", 
+    marginBottom: 7, 
+    marginTop: 7,
+    color: 'white',
+    fontSize: 20
   },
   appButtonContainer: {
     elevation: 8,
@@ -135,10 +144,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   }, 
   buttonContainer: {
-      margin: 5,
-      width: 100,
-      justifyContent: 'center',
-      alignItems: 'center',
+    margin: 5,
+    width: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 5,
   },
   image: {
     width: 100,
@@ -148,8 +158,8 @@ const styles = StyleSheet.create({
   imageContainer:{
     flexDirection: 'row',
     justifyContent: 'center',
-    marginBottom: 20,
-    marginTop: 20,
+    marginBottom: 30,
+    marginTop: 30,
   }
 
   });
