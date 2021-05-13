@@ -17,8 +17,10 @@ const vibration_pattern_bomb2 = [2000, 3000, 1000];
   return (
       <SafeAreaView >
       
-        <View style={styles.background}>
+        <View>
           <Text style={styles.infoTitle}>ARE YOU READY?</Text>
+          <Text style={styles.infoText}>Drag your finger across the different chests to feel the vibration patterns and try to remember what pattern the chest without a bomb has!</Text>
+          <Text style={styles.infoText}>When you feel ready and think that you can remember the different vibration patterns, click on START!</Text>
         </View>
 
         <View style={styles.imageContainer}>
@@ -51,50 +53,50 @@ const vibration_pattern_bomb2 = [2000, 3000, 1000];
 }
 
 const styles = StyleSheet.create({
-    
-  header: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#2e2e2e'
-  },
   infoTitle: {
+    textAlign: "center", 
+    marginBottom: 20, 
+    marginTop: 25,
+    color: 'white',
+    fontSize: 40
+  },
+  infoText: {
     textAlign: "center", 
     marginBottom: 7, 
     marginTop: 7,
     color: 'white',
-    fontSize: 40
-},
-appButtonContainer: {
-  elevation: 8,
-  backgroundColor: "#FFBE5E",
-  borderRadius: 10,
-  paddingVertical: 2,
-  paddingHorizontal: 6,
-  margin: 5,
-  width: 100
-
-},
-appButtonText: {
-  fontSize: 18,
-  color: "#2E2E2E",
-  alignSelf: "center",
-  textTransform: "uppercase",
-  
-},
-buttonContainer:{
-  justifyContent: 'center',
-  alignItems: 'center',
-},
-image: {
-  width: 100,
-  height: 80,
-  margin: 10
-},
-imageContainer:{
-  flexDirection: 'row',
-  justifyContent: 'center',
-}
-  
+    fontSize: 20
+  },
+  appButtonContainer: {
+    elevation: 8,
+    backgroundColor: "#FFBE5E",
+    borderRadius: 10,
+    paddingVertical: 2,
+    paddingHorizontal: 6,
+    margin: 5,
+    width: 100
+  },
+  appButtonText: {
+    fontSize: 18,
+    color: "#2E2E2E",
+    alignSelf: "center",
+    textTransform: "uppercase",
+  },
+  buttonContainer:{
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: 100,
+    height: 80,
+    margin: 10
+  },
+  imageContainer:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 30,
+    marginTop: 30,
+  }
   
   });
 
