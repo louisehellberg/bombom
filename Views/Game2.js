@@ -50,8 +50,8 @@ else if (chest_vibration3 == vibration_pattern_empty) {
 return (
   <SafeAreaView >
     
-    <View style={styles.background}>
-      <Text style={styles.infoTitle}>ARE YOU READY?</Text>
+    <View>
+      <Text style={styles.infoTitle}>MAKE YOUR PICK!</Text>
     </View>
 
     <View style={styles.imageContainer}>
@@ -75,23 +75,33 @@ return (
       </TouchableOpacity>
     </View>
 
-    <View style={styles.buttonContainer}>
-      <PickChestButton title="Pick" onPress={() => 
-        navigation.navigate('Confirmation', {
-          resultParam: chest_button1,
-        })}
-      />
-      <PickChestButton title="Pick" onPress={() => 
-        navigation.navigate('Confirmation', {
-          resultParam: chest_button2,
-        })}
-      />
-      <PickChestButton title="Pick" onPress={() => 
-        navigation.navigate('Confirmation', {
-          resultParam: chest_button3,
-        })}
-      />
+    <View style={styles.screenContainer}>
+
+      <View style={styles.buttonContainer}>
+        <PickChestButton title="Pick" onPress={() => 
+          navigation.navigate('Confirmation', {
+            resultParam: chest_button1,
+          })}
+        />
+      </View>
+
+      <View style={styles.buttonContainer}>
+        <PickChestButton title="Pick" onPress={() => 
+          navigation.navigate('Confirmation', {
+            resultParam: chest_button2,
+          })}
+        />
+      </View>
+
+      <View style={styles.buttonContainer}>
+        <PickChestButton title="Pick" onPress={() => 
+          navigation.navigate('Confirmation', {
+            resultParam: chest_button3,
+          })}
+        />
+      </View>
     </View>
+
 
   </SafeAreaView>
   );
@@ -100,8 +110,8 @@ return (
 const styles = StyleSheet.create({
   infoTitle: {
     textAlign: "center", 
-    marginBottom: 7, 
-    marginTop: 7,
+    // marginBottom: 17, 
+    marginTop: 17,
     color: 'white',
     fontSize: 40
   },
@@ -120,9 +130,15 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     textTransform: "uppercase",
   },
-  buttonContainer:{
+  screenContainer: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
+  }, 
+  buttonContainer: {
+      margin: 5,
+      width: 100,
+      justifyContent: 'center',
+      alignItems: 'center',
   },
   image: {
     width: 100,
@@ -132,6 +148,8 @@ const styles = StyleSheet.create({
   imageContainer:{
     flexDirection: 'row',
     justifyContent: 'center',
+    marginBottom: 20,
+    marginTop: 20,
   }
 
   });
