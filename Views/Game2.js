@@ -9,9 +9,9 @@ const PickChestButton = ({ onPress, title }) => (
   </TouchableOpacity>
 );
 
-const vibration_pattern_empty = [300, 300, 300];
-const vibration_pattern_bomb1 = [200, 1000, 200];
-const vibration_pattern_bomb2 = [2000, 300, 100];
+const vibration_pattern_empty = [100, 200, 300];
+const vibration_pattern_bomb1 = [100, 100, 100];
+const vibration_pattern_bomb2 = [500, 100, 100];
 
 const outer_vibration_list = [vibration_pattern_empty, vibration_pattern_bomb1, vibration_pattern_bomb2];
 var currentIndex = outer_vibration_list.length, temporaryValue, randomIndex;
@@ -58,6 +58,7 @@ return (
 
     <View style={styles.imageContainer}>
       <TouchableOpacity onPress={() => Vibration.vibrate(chest_vibration1)}>
+
         <Image
             style={styles.image}
             source={require('../Assets/closed.png')}

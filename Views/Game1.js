@@ -9,9 +9,9 @@ const Game1 = ({navigation}) => {
     </TouchableOpacity>
   );
 
-const vibration_pattern_empty = [1000, 2000, 3000];
-const vibration_pattern_bomb1 = [3000, 1000, 2000];
-const vibration_pattern_bomb2 = [2000, 3000, 1000];
+const vibration_pattern_empty = [100, 200, 300];
+const vibration_pattern_bomb1 = [100, 100, 100];
+const vibration_pattern_bomb2 = [500, 100, 100];
 
 /* ska vi ha massa patterns där de 3 som används slumpas fram(alternativt att bomben r samma och de andra slumpas) eller ska vi bara ha tre där bomben alltid är samma. Därefter ska de randomiseras i game2 */  
   return (
@@ -27,13 +27,13 @@ const vibration_pattern_bomb2 = [2000, 3000, 1000];
           <TouchableOpacity onPress={() => Vibration.vibrate(vibration_pattern_empty)}>
             <Image
                 style={styles.image}
-                source={require('../Assets/open.png')}
+                source={require('../Assets/openchestwithbomb.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => Vibration.vibrate(vibration_pattern_bomb1)}>
             <Image
                 style={styles.image}
-                source={require('../Assets/open.png')}
+                source={require('../Assets/openchestwithbomb.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity onPress={() => Vibration.vibrate(vibration_pattern_bomb2)}>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 100,
-    height: 80,
+    height: 100,
     margin: 10
   },
   imageContainer:{

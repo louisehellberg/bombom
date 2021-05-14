@@ -14,17 +14,23 @@ const Result = ({ navigation, route }) => {
     function display_chest() {
         if (resultParam == 'true') {
             return (
+                <View>
+                <Text style={styles.infoTitle}>Sorry, you lost!</Text>
+                <Image
+                    style={styles.result_image}
+                    source={require('../Assets/openexplosion.png')}
+                />
+                </View>
+            );
+        } else {
+            return (
+                <View>
+                <Text style={styles.infoTitle}>Congrats, you won!</Text>
                 <Image
                     style={styles.result_image}
                     source={require('../Assets/open.png')}
                 />
-            );
-        } else {
-            return (
-                <Image
-                    style={styles.result_image}
-                    source={require('../Assets/closed.png')}
-                />
+                </View>
             );
         }
     }
@@ -38,6 +44,7 @@ const Result = ({ navigation, route }) => {
       <SafeAreaView>
 
         <View style={styles.container}>
+        
             {display_chest()}
         </View>
             
@@ -56,7 +63,7 @@ const Result = ({ navigation, route }) => {
       borderRadius: 10,
       paddingVertical: 2,
       paddingHorizontal: 2,
-      width: 100,
+      width: 150,
       margin: 5
     },
     appButtonText: {
@@ -71,11 +78,20 @@ const Result = ({ navigation, route }) => {
     },
     container: {
         justifyContent: 'center',
+        alignItems: 'center',
     },
     result_image: {
-        width: 100,
-        height: 100,
-    }
+        width: 250,
+        height: 250,
+        margin: 25,
+    },
+    infoTitle: {
+        textAlign: "center", 
+        marginBottom: 20, 
+        marginTop: 25,
+        color: 'white',
+        fontSize: 40
+      },
     
   });
 
