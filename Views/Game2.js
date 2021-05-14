@@ -9,44 +9,41 @@ const PickChestButton = ({ onPress, title }) => (
   </TouchableOpacity>
 );
 
-const vibration_pattern_empty = [100, 200, 300];
-const vibration_pattern_bomb1 = [100, 100, 100];
-const vibration_pattern_bomb2 = [500, 100, 100];
+const patternEmptyChest = [100, 200, 300];
+const patternBomb1Chest = [100, 100, 100];
+const patternBomb2Chest = [500, 100, 100];
 
-const outer_vibration_list = [vibration_pattern_empty, vibration_pattern_bomb1, vibration_pattern_bomb2];
-var currentIndex = outer_vibration_list.length, temporaryValue, randomIndex;
+const oterPatternList = [patternEmptyChest, patternBomb1Chest, patternBomb2Chest];
+var currentIndex = oterPatternList.length, temporaryValue, randomIndex;
 console.log(currentIndex)
 
 while (0 !== currentIndex) {
-  // Pick a remaining element...
   randomIndex = Math.floor(Math.random() * currentIndex);
   currentIndex -= 1;
 
-  // And swap it with the current element.
-  temporaryValue = outer_vibration_list[currentIndex];
-  outer_vibration_list[currentIndex] = outer_vibration_list[randomIndex];
-  outer_vibration_list[randomIndex] = temporaryValue;
+  temporaryValue = oterPatternList[currentIndex];
+  oterPatternList[currentIndex] = oterPatternList[randomIndex];
+  oterPatternList[randomIndex] = temporaryValue;
 }
 
-const chest_vibration1 = outer_vibration_list[0];
-const chest_vibration2 = outer_vibration_list[1];
-const chest_vibration3 = outer_vibration_list[2];
+const chestVibration1 = oterPatternList[0];
+const chestVibration2 = oterPatternList[1];
+const chestVibration3 = oterPatternList[2];
 
-let chest_button1 = 'true'; 
-let chest_button2 = 'true';
-let chest_button3 = 'true';
+let chestButton1 = 'true'; 
+let chestButton2 = 'true';
+let chestButton3 = 'true';
 
-if (chest_vibration1 == vibration_pattern_empty) {
-  chest_button1 = 'false';
+if (chestVibration1 == patternEmptyChest) {
+  chestButton1 = 'false';
 }
-else if (chest_vibration2 == vibration_pattern_empty) {
-  chest_button2 = 'false';
+else if (chestVibration2 == patternEmptyChest) {
+  chestButton2 = 'false';
 }
-else if (chest_vibration3 == vibration_pattern_empty) {
-  chest_button3 = 'false';
+else if (chestVibration3 == patternEmptyChest) {
+  chestButton3 = 'false';
 }
 
-/* ska vi ha massa patterns där de 3 som används slumpas fram(alternativt att bomben r samma och de andra slumpas) eller ska vi bara ha tre där bomben alltid är samma. Därefter ska de randomiseras i game2 */  
 return (
   <SafeAreaView >
     
@@ -56,22 +53,22 @@ return (
     </View>
 
     <View style={styles.imageContainer}>
-      <TouchableOpacity onPress={() => Vibration.vibrate(chest_vibration1)}>
+      <TouchableOpacity onPress={() => Vibration.vibrate(chestVibration1)}>
 
         <Image
-            style={styles.image}
+            style={styles.actualImage}
             source={require('../Assets/closed.png')}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => Vibration.vibrate(chest_vibration2)}>
+      <TouchableOpacity onPress={() => Vibration.vibrate(chestVibration2)}>
         <Image
-            style={styles.image}
+            style={styles.actualImage}
             source={require('../Assets/closed.png')}
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => Vibration.vibrate(chest_vibration3)}>
+      <TouchableOpacity onPress={() => Vibration.vibrate(chestVibration3)}>
         <Image
-            style={styles.image}
+            style={styles.actualImage}
             source={require('../Assets/closed.png')}
         />
       </TouchableOpacity>
@@ -150,7 +147,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 5,
   },
-  image: {
+  actualImage: {
     width: 100,
     height: 80,
     margin: 10

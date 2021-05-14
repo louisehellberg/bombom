@@ -9,15 +9,14 @@ const Game1 = ({navigation}) => {
     </TouchableOpacity>
   );
 
-const vibration_pattern_empty = [100, 200, 300];
-const vibration_pattern_bomb1 = [100, 100, 100];
-const vibration_pattern_bomb2 = [500, 100, 100];
+const patternEmptyChest = [100, 200, 300];
+const patternBomb1Chest = [100, 100, 100];
+const patternBomb2Chest = [500, 100, 100];
 
-/* ska vi ha massa patterns där de 3 som används slumpas fram(alternativt att bomben r samma och de andra slumpas) eller ska vi bara ha tre där bomben alltid är samma. Därefter ska de randomiseras i game2 */  
-  return (
+return (
       <SafeAreaView >
 
-        <Button title="How to play" color='white' onPress={() => navigation.navigate('Info')} style={styles.btn}/>
+        <Button title="How to play" color='white' onPress={() => navigation.navigate('Info')}/>
       
         <View>
           <Text style={styles.infoTitle}>ARE YOU READY?</Text>
@@ -25,21 +24,21 @@ const vibration_pattern_bomb2 = [500, 100, 100];
         </View>
 
         <View style={styles.imageContainer}>
-          <TouchableOpacity onPress={() => Vibration.vibrate(vibration_pattern_empty)}>
+          <TouchableOpacity onPress={() => Vibration.vibrate(patternEmptyChest)}>
             <Image
-                style={styles.image}
+                style={styles.actualImage}
                 source={require('../Assets/openchestwithbomb.png')}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Vibration.vibrate(vibration_pattern_bomb1)}>
+          <TouchableOpacity onPress={() => Vibration.vibrate(patternBomb1Chest)}>
             <Image
-                style={styles.image}
+                style={styles.actualImage}
                 source={require('../Assets/openchestwithbomb.png')}
             />
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => Vibration.vibrate(vibration_pattern_bomb2)}>
+          <TouchableOpacity onPress={() => Vibration.vibrate(patternBomb2Chest)}>
             <Image
-                style={styles.image}
+                style={styles.actualImage}
                 source={require('../Assets/open.png')}
             />
           </TouchableOpacity>
@@ -54,11 +53,6 @@ const vibration_pattern_bomb2 = [500, 100, 100];
 }
 
 const styles = StyleSheet.create({
-  btn: {
-    marginBottom: 7, 
-    textTransform: "uppercase",
-    //want this button to be in the top right corner maybe?
-  },
   infoTitle: {
     textAlign: "center", 
     marginBottom: 20, 
@@ -92,7 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  image: {
+  actualImage: {
     width: 100,
     height: 100,
     margin: 10
