@@ -4,36 +4,36 @@ import StartBtn from '../Components/StartBtn';
 
 const Info = ({navigation}) => {
 
-    const StartButton = ({ title }) => (
-        <TouchableOpacity onPress={() => navigation.navigate('Game1')} style={styles.appButtonContainer}>
-          <Text style={styles.appButtonText}>{title}</Text>
-        </TouchableOpacity>
-      );
-
-    return (
-      <SafeAreaView>
-            <Text style={styles.infoTitle}>HOW TO PLAY</Text>
-            <Text style={styles.infoText}>The purpose of the game is to choose the chest WITHOUT a bomb. 
-                                          When the game starts you will see 3 open chests. 
-                                          Every chest has its own vibration pattern that you can feel if you hold your finger on the chest. 
-                                          Try to remember the vibration pattern of the chest WITHOUT a bomb.                      
-            </Text>
-            <Text style={styles.infoText}>When clicking on LETS GO, the chests will close and move around in random order. 
-                                          Your task is then to find the chest WITHOUT a bomb! 
-                                          Hold your finger on the different chests to feel the vibration patterns and identify the chest WITHOUT a bomb!
-                                          Choose the chest you think is correct by clicking the button underneath it.
-            </Text>
-
-            <Text style={styles.infoText}>Do you think you can do it?</Text>
-           
-            <View style={styles.screenContainer}>
-            
-              <StartButton title="Continue" size="sm"/>
-            </View>
-
-      </SafeAreaView>
+  const StartButton = ({ title }) => (
+      <TouchableOpacity onPress={() => navigation.navigate('Game1')} style={styles.appButtonContainer}>
+        <Text style={styles.appButtonText}>{title}</Text>
+      </TouchableOpacity>
     );
-  };
+
+  return (
+    <SafeAreaView>
+        <Text style={styles.infoTitle}>HOW TO PLAY</Text>
+        <Text style={styles.infoText}>The purpose of the game is to choose the chest WITHOUT a bomb. 
+                                      When the game starts you will see 3 open chests. 
+                                      Every chest has its own vibration pattern that you can feel if you hold your finger on the chest. 
+                                      Try to remember the vibration pattern of the chest WITHOUT a bomb.                      
+        </Text>
+        <Text style={styles.infoText}>When clicking on LETS GO, the chests will close and move around in random order. 
+                                      Your task is then to find the chest WITHOUT a bomb! 
+                                      Hold your finger on the different chests to feel the vibration patterns and identify the chest WITHOUT a bomb!
+                                      Choose the chest you think is correct by clicking the button underneath it.
+        </Text>
+
+        <Text style={styles.infoText}>Do you think you can do it?</Text>
+        
+        <View style={styles.screenContainer}>
+        
+          <StartButton title="Continue" size="sm"/>
+        </View>
+
+    </SafeAreaView>
+  );
+};
 
   const styles = StyleSheet.create({
     appButtonContainer: {
@@ -42,7 +42,6 @@ const Info = ({navigation}) => {
       borderRadius: 10,
       paddingVertical: 2,
       paddingHorizontal: 6,
-   
     },
     appButtonText: {
       fontSize: 18,
@@ -69,9 +68,7 @@ const Info = ({navigation}) => {
         margin: 'auto',
         marginLeft: 130,
         marginTop: 10,
-        width: 130, 
-         
-       
+        width: 130,
     }
   });
 
