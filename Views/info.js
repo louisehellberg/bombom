@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { SafeAreaView, Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import StartBtn from '../Components/StartBtn';
-
 
 const Info = ({navigation}) => {
 

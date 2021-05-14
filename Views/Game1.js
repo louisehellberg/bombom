@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Image, Vibration } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, TouchableOpacity, Image, Vibration, Button } from 'react-native';
 import StartButton from '../Components/StartBtn';
   
 const Game1 = ({navigation}) => {
@@ -16,11 +16,12 @@ const vibration_pattern_bomb2 = [500, 100, 100];
 /* ska vi ha massa patterns där de 3 som används slumpas fram(alternativt att bomben r samma och de andra slumpas) eller ska vi bara ha tre där bomben alltid är samma. Därefter ska de randomiseras i game2 */  
   return (
       <SafeAreaView >
+
+        <Button title="How to play" color='white' onPress={() => navigation.navigate('Info')} style={styles.btn}/>
       
         <View>
           <Text style={styles.infoTitle}>ARE YOU READY?</Text>
-          <Text style={styles.infoText}>Hold your finger on the different chests to feel the vibration patterns and try to remember what pattern the chest without a bomb has!</Text>
-          <Text style={styles.infoText}>When you feel ready and think that you can remember the different vibration patterns, click on LETS GO!</Text>
+          <Text style={styles.infoText}>Remember which chest has which vibration pattern!</Text>
         </View>
 
         <View style={styles.imageContainer}>
@@ -53,6 +54,11 @@ const vibration_pattern_bomb2 = [500, 100, 100];
 }
 
 const styles = StyleSheet.create({
+  btn: {
+    marginBottom: 7, 
+    textTransform: "uppercase",
+    //want this button to be in the top right corner maybe?
+  },
   infoTitle: {
     textAlign: "center", 
     marginBottom: 20, 

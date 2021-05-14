@@ -52,8 +52,7 @@ return (
     
     <View>
       <Text style={styles.infoTitle}>MAKE YOUR PICK!</Text>
-      <Text style={styles.infoText}>Hold your finger on the different chests to feel the vibration patterns and identify the chest without a bomb!</Text>
-      <Text style={styles.infoText}>Then click on the button underneatch the chest that you think is the one without a bomb!</Text>
+      <Text style={styles.infoText}>Identify the chest WITHOUT a bomb!</Text>
     </View>
 
     <View style={styles.imageContainer}>
