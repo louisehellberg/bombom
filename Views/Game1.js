@@ -19,8 +19,8 @@ const vibration_pattern_bomb2 = [500, 100, 100];
       
         <View>
           <Text style={styles.infoTitle}>ARE YOU READY?</Text>
-          <Text style={styles.infoText}>Drag your finger across the different chests to feel the vibration patterns and try to remember what pattern the chest without a bomb has!</Text>
-          <Text style={styles.infoText}>When you feel ready and think that you can remember the different vibration patterns, click on START!</Text>
+          <Text style={styles.infoText}>Hold your finger on the different chests to feel the vibration patterns and try to remember what pattern the chest without a bomb has!</Text>
+          <Text style={styles.infoText}>When you feel ready and think that you can remember the different vibration patterns, click on LETS GO!</Text>
         </View>
 
         <View style={styles.imageContainer}>
@@ -45,7 +45,7 @@ const vibration_pattern_bomb2 = [500, 100, 100];
         </View>
 
         <View style={styles.buttonContainer}>
-          <StartButton title="Start" size="sm" onPress={() => navigation.navigate('Game2')}/>
+          <StartButton title="Lets go" size="sm" onPress={() => navigation.navigate('Game2')}/>
         </View>
     
       </SafeAreaView>
