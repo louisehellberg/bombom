@@ -1,14 +1,14 @@
 import React from 'react';
 import {
     SafeAreaView,
-    ScrollView,
     StatusBar,
     StyleSheet,
     Text,
     useColorScheme,
     View,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    Button
   } from 'react-native';
 
   import {
@@ -22,9 +22,7 @@ import {
 const Start = ({navigation}) => {
     const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: Colors.darker 
-  };
+  
   const StartButton = ({ title, onPress}) => (
     <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
       <Text style={styles.appButtonText}>{title}</Text>
@@ -34,35 +32,27 @@ const Start = ({navigation}) => {
   return (
     <SafeAreaView style={{color: 'black'}}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      {/* <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}> */}
+
         <View style={styles.header}>
-        <Image
-        style={styles.logo}
+        <Image style={styles.logo}
         source={require('../Static/bombomlogga_Rityta1.png')}
       />
       </View>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <Section >
-            Welcome to the classic game: <Text /* style={styles.highlight} */>Choose the right chest</Text> 
-          </Section>
-          
-          
-          {/* <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section> */}
+            <Text style={styles.sectionDescription}>Welcome to the classic game: </Text>
+            <Text style={styles.sectionDescription}>Choose the right chest</Text> 
+      <Image style={{width: 100, height: 100, backgroundColor: 'white', margin: 20}}
+        source={require('../Assets/bomb1.png')}
+      />
           <StartButton title="Start" onPress={() => 
                       navigation.navigate('Game1'
                       )}
           />
-          <StartButton title="How to play" onPress={() => 
-                      navigation.navigate('Game1'
+          <Button title="How to play" color='white' onPress={() => 
+                      navigation.navigate('Info'
                       )}
           />
-          
         </View>
-     
     </SafeAreaView>
   );
 }
@@ -74,7 +64,7 @@ const Section = ({children, title}) => {
           style={[
             styles.sectionTitle,
             {
-              color: isDarkMode ? Colors.white : Colors.black,
+              color: 'white',
             },
           ]}>
           {title}
@@ -108,19 +98,19 @@ const Section = ({children, title}) => {
     highlight: {
       fontWeight: '700',
     },
-  btn: {
-    backgroundColor: "#FFBE5E"
-  },
+  
+  
   logo: {
-    width: 250,
-    height: 250,
+    width: 350,
+    height: 350,
     backgroundColor: 'white',
    
   },
   header: {
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#2e2e2e'
+      backgroundColor: '#2e2e2e',
+      marginTop: 20
   },
   appButtonContainer: {
     elevation: 8,
@@ -128,8 +118,9 @@ const Section = ({children, title}) => {
     borderRadius: 10,
     paddingVertical: 2,
     paddingHorizontal: 6,
-    margin: 5,
-    width: 100
+    margin: 15,
+    width: 100,
+    marginTop: 30
   
   },
   appButtonText: {

@@ -20,7 +20,7 @@ const Confirmation = ({ navigation, route }) => {
     return (
       <SafeAreaView>
 
-            <Text style={{fontSize: 20, textAlign: "center", color: 'white', marginBottom: 10}}>Are you sure?</Text>
+            <Text style={styles.infoTitle}>Are you sure?</Text>
             
             <View style={styles.screenContainer}>
                 <View style={styles.buttonContainer}>
@@ -56,7 +56,8 @@ const Confirmation = ({ navigation, route }) => {
         paddingHorizontal: 2
       },
     appButtonText: {
-      fontSize: 18,
+      fontSize: 21,
+      /* fontWeight: 'bold', */
       color: "#2E2E2E",
       alignSelf: "center",
       textTransform: "uppercase"
@@ -68,7 +69,14 @@ const Confirmation = ({ navigation, route }) => {
     buttonContainer: {
         margin: 5,
         width: 100,
-    }
+    },
+    infoTitle: {
+      textAlign: "center", 
+      marginBottom: 50, 
+      marginTop: 125,
+      color: 'white',
+      fontSize: 40
+    },
   });
 
   export default Confirmation;

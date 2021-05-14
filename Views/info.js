@@ -15,15 +15,18 @@ const Info = ({navigation}) => {
     return (
       <SafeAreaView>
             <Text style={styles.infoTitle}>HOW TO PLAY</Text>
-            <Text style={styles.infoText}>The purpose of the game is to choose the chest WITHOUT a bomb. 
-                                        When clicking on start, the chests will move around in random order. 
-                                        Your task is then to click on the chest that you think does NOT contain a bomb. 
+            <Text style={styles.infoText}>The purpose of the game is to choose the chest WITHOUT a bomb. Every chest will have it's own vibration. 
+                                        Your task is to remember the the empty chest's vibration.
+                                         
             </Text>
+            <Text style={styles.infoText}>When clicking on start, the chests will move around in random order. 
+                                        Your task is then to find the vibration for the empty chest and click on the chest 
+                                        that you think does NOT contain a bomb.</Text>
             <Text style={styles.infoText}>Do you think you can do it?</Text>
            
             <View style={styles.screenContainer}>
             
-              <StartButton title="Start" size="sm"/>
+              <StartButton title="Continue" size="sm"/>
             </View>
 
       </SafeAreaView>
@@ -48,22 +51,24 @@ const Info = ({navigation}) => {
     infoTitle: {
         textAlign: "center", 
         marginBottom: 7, 
-        marginTop: 7,
+        marginTop: 25,
         color: 'white',
         fontSize: 40
     },
     infoText: {
         textAlign: "center", 
-        marginBottom: 7, 
+        marginBottom: 9, 
         marginTop: 7,
         color: 'white',
-        fontSize: 20
+        fontSize: 20,
+        paddingHorizontal: 15
     },
     screenContainer: {
         margin: 'auto',
-        marginLeft: 140,
+        marginLeft: 130,
         marginTop: 10,
-        width: 100,  
+        width: 130, 
+         
        
     }
   });
